@@ -13,15 +13,11 @@ void setup() {
 
 void loop() {
 	int strobe_delay = analogRead(5) / 10;
+	int sec_strobe_delay = analogRead(3) / 10;
 	delay(strobe_delay);
 	digitalWrite(PIN, LOW);
-	delay(strobe_delay);
+	digitalWrite(8, HIGH);
+	delay(sec_strobe_delay);
 	digitalWrite(PIN, HIGH);
-
-	int x = Serial.available() ? Serial.read() : 0;
-	if(x == 0)
-		digitalWrite(8, HIGH);
-	Serial.write("Hi");
-	Serial.write(x);
-	Serial.write("!\n");
+	digitalWrite(8, LOW);
 }
