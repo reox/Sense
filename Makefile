@@ -1,11 +1,11 @@
-ARDUINO_DIR=/usr/share/arduino
+ARDUINO_DIR=arduino
 
-TARGET=demo
+TARGET=serial
 ARDUINO_LIBS=
 MCU=atmega168
-F_CPU=1000000
-ARDUINO_PORT=/dev/arduino
+F_CPU=16000000
+ARDUINO_PORT=/dev/tty.usbmodem1d11
 AVRDUDE_ARD_BAUDRATE=19200
 
-include /usr/share/arduino/Arduino.mk
+include Arduino.mk
 # AVRDUDE_COM_OPTS+=-F
